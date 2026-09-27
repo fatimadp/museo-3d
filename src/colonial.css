@@ -1,0 +1,146 @@
+.colonial-ui .topbar{
+  right:38vw;
+  background:linear-gradient(to bottom,rgba(20,14,9,.72),transparent)
+}
+
+.colonial-ui .counter{
+  position:fixed;
+  right:24px;
+  top:22px;
+  z-index:80
+}
+
+.colonial-ui .nav-timeline{
+  left:31%
+}
+
+.colonial-ui .art-legend-side{
+  --accent:#d4af37;
+  position:fixed;
+  z-index:30;
+  top:0;
+  right:0;
+  width:38vw;
+  height:100vh;
+  overflow-y:auto;
+  padding:110px 58px 110px;
+  background:
+    radial-gradient(circle at 100% 0%,color-mix(in srgb,var(--accent) 11%,transparent),transparent 32%),
+    linear-gradient(145deg,#211b16,#100d0a 75%);
+  border-left:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
+  pointer-events:auto;
+  scrollbar-width:thin;
+  scrollbar-color:color-mix(in srgb,var(--accent) 55%,transparent) transparent
+}
+
+.colonial-ui .art-legend-side::-webkit-scrollbar{width:6px}
+
+.colonial-ui .art-legend-side::-webkit-scrollbar-thumb{
+  background:color-mix(in srgb,var(--accent) 55%,transparent);
+  border-radius:10px
+}
+
+.colonial-ui .legend-header{
+  padding-bottom:25px;
+  margin-bottom:25px;
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 28%,transparent)
+}
+
+.colonial-ui .legend-kicker{
+  display:block;
+  margin-bottom:13px;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase
+}
+
+.colonial-ui .art-legend-side h2{
+  margin:0 0 18px;
+  color:#f5ead7;
+  font:500 clamp(36px,2.7vw,56px)/1.02 'Playfair Display',serif
+}
+
+.colonial-ui .legend-meta{
+  display:flex;
+  flex-direction:column;
+  gap:5px
+}
+
+.colonial-ui #period,
+.colonial-ui #region{
+  font-size:15px;
+  line-height:1.5;
+  color:#bbae9c
+}
+
+.colonial-ui .legend-content-vertical{
+  display:flex;
+  flex-direction:column;
+  gap:0
+}
+
+.colonial-ui .legend-col{
+  padding:21px 0 23px;
+  border-bottom:1px solid rgba(255,255,255,.07)
+}
+
+.colonial-ui .legend-col .lbl{
+  display:block;
+  margin-bottom:10px;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase
+}
+
+.colonial-ui .legend-col p{
+  margin:0;
+  color:#e2d8c9;
+  font-size:17px;
+  line-height:1.65
+}
+
+@keyframes colonialFade{
+  from{opacity:0;transform:translateX(15px)}
+  to{opacity:1;transform:translateX(0)}
+}
+
+@media(min-width:1700px){
+  .colonial-ui .art-legend-side{
+    padding-left:72px;
+    padding-right:72px
+  }
+
+  .colonial-ui .legend-col p{font-size:18px}
+}
+
+@media(max-width:1200px){
+  .colonial-ui .art-legend-side{
+    width:40vw;
+    padding:105px 35px 100px
+  }
+
+  .colonial-ui .topbar{right:40vw}
+  .colonial-ui .nav-timeline{left:30%}
+  .colonial-ui .legend-col p{font-size:15px}
+}
+
+@media(max-width:900px){
+  .colonial-ui .topbar{right:0}
+
+  .colonial-ui .art-legend-side{
+    top:auto;
+    bottom:0;
+    width:100%;
+    height:48vh;
+    padding:25px 24px 100px;
+    border-left:0;
+    border-top:1px solid rgba(212,175,55,.4)
+  }
+
+  .colonial-ui .art-legend-side h2{font-size:30px}
+  .colonial-ui .nav-timeline{left:50%;bottom:15px}
+}

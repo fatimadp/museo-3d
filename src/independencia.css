@@ -1,0 +1,556 @@
+.independence-ui{
+  --info-width:36vw;
+  --scene-width:64vw;
+  --archive-bg:#dfe3e5;
+  --archive-paper:#f3f0e9;
+  --archive-paper-dark:#ddd8ce;
+  --archive-text:#222b32;
+  --archive-secondary:#56616a;
+  --archive-line:#bfc6ca
+}
+
+/* Encabezado de escena */
+.independence-ui .topbar{
+  right:var(--info-width);
+  padding:28px 34px 55px;
+  background:linear-gradient(
+    to bottom,
+    rgba(218,223,226,.98) 0%,
+    rgba(218,223,226,.82) 55%,
+    transparent 100%
+  )
+}
+
+.independence-ui .topbar::after{
+  content:'';
+  position:absolute;
+  left:34px;
+  right:34px;
+  top:103px;
+  height:2px;
+  background:linear-gradient(
+    to right,
+    #9f3040,
+    rgba(159,48,64,.15),
+    transparent
+  )
+}
+
+.independence-ui .eyebrow{
+  color:#9f3040;
+  font-size:11px;
+  font-style:normal;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase
+}
+
+.independence-ui .topbar h1{
+  color:#222b32;
+  font-size:clamp(34px,3vw,52px);
+  text-shadow:none;
+  letter-spacing:-.025em
+}
+
+.independence-ui .btn-back{
+  color:#65717a;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.13em
+}
+
+.independence-ui .btn-back:hover{
+  color:#9f3040
+}
+
+.independence-ui .counter{
+  position:fixed;
+  top:28px;
+  right:34px;
+  z-index:90;
+  color:#7a838a
+}
+
+.independence-ui .counter strong{
+  color:#9f3040
+}
+
+/* Sala de información */
+.independence-ui .independence-info{
+  --accent:#9f3040;
+  position:fixed;
+  z-index:35;
+  top:0;
+  right:0;
+  width:var(--info-width);
+  height:100vh;
+  overflow-y:auto;
+  padding:88px 48px 65px;
+  color:var(--archive-text);
+  background:
+    radial-gradient(
+      circle at 92% 5%,
+      color-mix(in srgb,var(--accent) 8%,transparent),
+      transparent 24%
+    ),
+    linear-gradient(
+      145deg,
+      #e8ebec 0%,
+      #dfe3e5 48%,
+      #d3d9dc 100%
+    );
+  border-left:1px solid rgba(54,64,71,.12);
+  box-shadow:-20px 0 50px rgba(40,48,55,.09);
+  pointer-events:auto;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(159,48,64,.45) transparent
+}
+
+.independence-ui .independence-info::before{
+  content:'';
+  position:fixed;
+  top:0;
+  right:calc(var(--info-width) - 5px);
+  width:5px;
+  height:100vh;
+  background:linear-gradient(
+    to bottom,
+    var(--accent),
+    color-mix(in srgb,var(--accent) 35%,transparent) 70%,
+    transparent
+  )
+}
+
+.independence-ui .independence-info::-webkit-scrollbar{
+  width:5px
+}
+
+.independence-ui .independence-info::-webkit-scrollbar-thumb{
+  background:rgba(159,48,64,.45);
+  border-radius:20px
+}
+
+/* Cabecera */
+.independence-ui .independence-room-header{
+  position:relative;
+  padding:0 0 30px;
+  margin-bottom:30px;
+}
+
+.independence-ui .independence-room-number{
+  margin-bottom:17px;
+  color:#7d878e;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.22em;
+  text-transform:uppercase
+}
+
+.independence-ui .independence-kicker{
+  display:block;
+  margin-bottom:10px;
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.2em;
+  text-transform:uppercase
+}
+
+.independence-ui .independence-room-header h2{
+  max-width:570px;
+  margin:0 0 18px;
+  color:#202930;
+  font:500 clamp(36px,2.65vw,55px)/1.02 'Playfair Display',serif;
+  letter-spacing:-.03em
+}
+
+.independence-ui .independence-meta{
+  display:flex;
+  flex-direction:column;
+  gap:4px
+}
+
+.independence-ui .independence-meta span{
+  color:#5c6870;
+  font-size:14px;
+  font-weight:500;
+  line-height:1.45
+}
+
+.independence-ui .independence-room-header::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:1px;
+  background:linear-gradient(
+    to right,
+    #aeb6bb,
+    transparent
+  )
+}
+
+/* Zona de pedestales */
+.independence-ui .independence-exhibition{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px 18px;
+  padding:12px 0 28px
+}
+
+/* Pedestal */
+.independence-ui .museum-plinth{
+  position:relative;
+  min-height:250px;
+  padding:27px 24px 24px;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      145deg,
+      #f5f2eb,
+      #e9e5dc
+    );
+  border:1px solid rgba(61,70,76,.10);
+  box-shadow:
+    0 18px 30px rgba(50,57,62,.10),
+    inset 0 1px 0 rgba(255,255,255,.85);
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease
+}
+
+/* Diferentes alturas para que parezca museo */
+.independence-ui .museum-plinth-1{
+  transform:translateY(0)
+}
+
+.independence-ui .museum-plinth-2{
+  transform:translateY(28px)
+}
+
+.independence-ui .museum-plinth-3{
+  transform:translateY(-5px)
+}
+
+.independence-ui .museum-plinth-4{
+  transform:translateY(23px)
+}
+
+.independence-ui .museum-plinth:hover{
+  transform:translateY(-7px);
+  border-color:color-mix(in srgb,var(--accent) 25%,transparent);
+  box-shadow:
+    0 25px 45px rgba(50,57,62,.14),
+    inset 0 1px 0 rgba(255,255,255,.9)
+}
+
+/* Cara lateral simulada */
+.independence-ui .museum-plinth::after{
+  content:'';
+  position:absolute;
+  top:9px;
+  right:-9px;
+  width:9px;
+  height:calc(100% - 9px);
+  background:#d3cec5;
+  transform:skewY(-45deg);
+  transform-origin:left top;
+  opacity:.55
+}
+
+/* Número */
+.independence-ui .plinth-number{
+  position:absolute;
+  right:15px;
+  bottom:9px;
+  color:rgba(32,41,48,.06);
+  font:600 70px 'Playfair Display',serif;
+  pointer-events:none
+}
+
+/* Iconos */
+.independence-ui .plinth-icon{
+  position:relative;
+  width:43px;
+  height:43px;
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);
+  border-radius:50%;
+  color:var(--accent)
+}
+
+/* Gobierno */
+.independence-ui .government-icon::before{
+  content:'';
+  width:20px;
+  height:13px;
+  border:2px solid var(--accent);
+  border-top:0
+}
+
+.independence-ui .government-icon::after{
+  content:'';
+  position:absolute;
+  width:24px;
+  height:2px;
+  top:12px;
+  background:var(--accent);
+  box-shadow:
+    -7px 7px 0 -5px var(--accent),
+    0 7px 0 -5px var(--accent),
+    7px 7px 0 -5px var(--accent)
+}
+
+/* Poder */
+.independence-ui .power-icon::before{
+  content:'';
+  width:18px;
+  height:18px;
+  border:2px solid var(--accent);
+  transform:rotate(45deg)
+}
+
+.independence-ui .power-icon::after{
+  content:'';
+  position:absolute;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--accent)
+}
+
+/* Cambio */
+.independence-ui .change-icon::before{
+  content:'';
+  width:20px;
+  height:2px;
+  background:var(--accent);
+  transform:rotate(-35deg)
+}
+
+.independence-ui .change-icon::after{
+  content:'';
+  position:absolute;
+  width:8px;
+  height:8px;
+  right:9px;
+  top:10px;
+  border-top:2px solid var(--accent);
+  border-right:2px solid var(--accent);
+  transform:rotate(10deg)
+}
+
+/* Reforma */
+.independence-ui .reform-icon::before{
+  content:'';
+  width:18px;
+  height:20px;
+  border:2px solid var(--accent);
+  border-radius:2px
+}
+
+.independence-ui .reform-icon::after{
+  content:'';
+  position:absolute;
+  width:8px;
+  height:5px;
+  border-left:2px solid var(--accent);
+  border-bottom:2px solid var(--accent);
+  transform:rotate(-45deg)
+}
+
+/* Texto de pedestal */
+.independence-ui .plinth-content{
+  position:relative;
+  z-index:2
+}
+
+.independence-ui .plinth-content .lbl{
+  display:block;
+  margin-bottom:12px;
+  color:var(--accent);
+  font-size:10px;
+  font-weight:800;
+  line-height:1.3;
+  letter-spacing:.14em;
+  text-transform:uppercase
+}
+
+.independence-ui .plinth-content p{
+  margin:0;
+  color:#343d43;
+  font-size:14px;
+  font-weight:500;
+  line-height:1.65
+}
+
+/* Línea del recorrido */
+.independence-ui .museum-floor-mark{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  margin-top:25px;
+  color:#69747b;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.22em;
+  text-transform:uppercase
+}
+
+.independence-ui .museum-floor-mark span{
+  width:48px;
+  height:1px;
+  background:var(--accent)
+}
+
+/* Flechas */
+.independence-ui .independence-arrow{
+  position:fixed;
+  z-index:80;
+  top:50%;
+  transform:translateY(-50%);
+  width:56px;
+  height:56px;
+  padding:0;
+  border:1px solid rgba(53,63,70,.18);
+  border-radius:50%;
+  background:rgba(239,237,232,.9);
+  color:#9f3040;
+  font-size:27px;
+  cursor:pointer;
+  pointer-events:auto;
+  backdrop-filter:blur(12px);
+  box-shadow:0 10px 30px rgba(50,57,62,.12);
+  transition:.25s ease
+}
+
+.independence-ui .independence-arrow:hover{
+  border-color:#9f3040;
+  background:#9f3040;
+  color:#f5f2ec;
+  transform:translateY(-50%) scale(1.07)
+}
+
+.independence-ui .independence-arrow-left{
+  left:24px
+}
+
+.independence-ui .independence-arrow-right{
+  right:calc(var(--info-width) + 24px)
+}
+
+.independence-ui .independence-arrow.disabled{
+  opacity:.2;
+  pointer-events:none
+}
+
+.independence-ui .nav-timeline{
+  display:none!important
+}
+
+@keyframes independenceFade{
+  from{
+    opacity:0;
+    transform:translateY(10px)
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0)
+  }
+}
+
+@media(min-width:1700px){
+  .independence-ui .independence-info{
+    padding-left:62px;
+    padding-right:62px
+  }
+
+  .independence-ui .plinth-content p{
+    font-size:15px
+  }
+}
+
+@media(max-width:1300px){
+  .independence-ui{
+    --info-width:40vw;
+    --scene-width:60vw
+  }
+
+  .independence-ui .independence-info{
+    padding:90px 30px 55px
+  }
+
+  .independence-ui .topbar{
+    right:var(--info-width)
+  }
+
+  .independence-ui .independence-exhibition{
+    grid-template-columns:1fr
+  }
+
+  .independence-ui .museum-plinth{
+    min-height:auto
+  }
+
+  .independence-ui .museum-plinth-1,
+  .independence-ui .museum-plinth-2,
+  .independence-ui .museum-plinth-3,
+  .independence-ui .museum-plinth-4{
+    transform:none
+  }
+}
+
+@media(max-width:900px){
+  .independence-ui{
+    --info-width:100vw;
+    --scene-width:100vw
+  }
+
+  .independence-ui .topbar{
+    right:0
+  }
+
+  .independence-ui .independence-info{
+    top:auto;
+    bottom:0;
+    width:100%;
+    height:50vh;
+    padding:25px 22px 50px;
+    border-left:0;
+    border-top:1px solid rgba(159,48,64,.28)
+  }
+
+  .independence-ui .independence-info::before{
+    display:none
+  }
+
+  .independence-ui .independence-room-header h2{
+    font-size:30px
+  }
+
+  .independence-ui .independence-exhibition{
+    grid-template-columns:1fr;
+    gap:15px
+  }
+
+  .independence-ui .independence-arrow{
+    top:42%;
+    width:48px;
+    height:48px
+  }
+
+  .independence-ui .independence-arrow-left{
+    left:12px
+  }
+
+  .independence-ui .independence-arrow-right{
+    right:12px
+  }
+}
